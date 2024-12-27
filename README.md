@@ -53,8 +53,12 @@ The `load_population_data` function allows loading and preprocessing of populati
 ```python
 from smallestcircle import load_population_data
 
-file_path = "path_to_population_data.zip"  # Path to the NetCDF or zip file
-data, latitudes, longitudes, population_array = load_population_data(file_path, year=2020, country_code="ITA")
+file_path = "gpw_v4_population_count_rev11_2pt5_min.nc"
+country_code='ITA' #380 or 'italy'
+year=2020
+bounds=None #[30,32,-5,10]
+
+population_data, latitudes, longitudes  = load_population_data(file_path, year=year, country_code=country_code,bounds=bounds)
 ```
 
 ### 2. Compute the Smallest Circle
@@ -64,7 +68,7 @@ Use the `smallest_circle` function to compute the smallest circle that covers a 
 ```python
 from smallestcircle import smallest_circle
 
-center, radius = smallest_circle(data, population_array, latitudes, longitudes, target_population_ratio=0.5, details=True, Plot=False)
+center, radius = smallest_circle(population_data, latitudes, longitudes, target_population_ratio=0.5, details=False, Plot=False)
 print(f"Center: {center}, Radius: {radius} km")
 ```
 
@@ -74,7 +78,7 @@ Visualize the population density with the calculated circle.
 
 ```python
 from smallestcircle import smallest_circle
-_, _ = smallest_circle(data, population_array, latitudes, longitudes, target_population_ratio=0.5, details=True, Plot=True)
+_, _ = smallest_circle(population_data, latitudes, longitudes, target_population_ratio=0.5, details=True, Plot=True)
 ```
 
 ---
