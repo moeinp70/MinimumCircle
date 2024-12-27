@@ -27,7 +27,7 @@ pip install -r requirements.txt
 ### Install from Source
 1. Clone the repository:
     ```bash
-    git clone https://github.com/yourusername/SmallestCircle.git
+    git clone https://github.com/moeinp70/SmallestCircle.git
     cd SmallestCircle
     ```
 2. Install the library:
