@@ -1,19 +1,45 @@
-from src.smallestcircle import load_population_data, smallest_circle
+import time
+import pytest
+import numpy as np
+from smallestcircle import load_population_data, smallest_circle, plot_circle
 
 def test_load_population_data():
-    # Replace "path_to_dataset.nc" with a real file path
-    file_path = "path_to_dataset.nc"
-    populations, latitudes, longitudes, _ = load_population_data(file_path, country_code=380)
+    """
+    Test the load_population_data function with a dataset.
+    """
+    file_path = "../dataset/gpw_v4_population_count_rev11_2pt5_min.nc"
 
-    assert len(populations) > 0, "Populations should not be empty"
+    country_code='IRn'
+    year=2020
+    bounds=None#[10,50,-10,50]
 
-def test_smallest_circle():
-    # Mock data
-    populations = [100, 200, 300, 400, 500]
-    latitudes = [10, 20, 30, 40, 50]
-    longitudes = [10, 20, 30, 40, 50]
+    population_data, latitudes, longitudes  = load_population_data(file_path, year=year, country_code=country_code,bounds=bounds)
+    assert len(population_data) > 0, "Populations array should not be empty"
+    assert len(latitudes) > 0, "Latitudes array should not be empty"
+    assert len(longitudes) > 0, "Longitudes array should not be empty"
 
-    best_center, best_radius = smallest_circle(populations, latitudes, longitudes, target_population_ratio=0.5)
 
-    assert best_center is not None, "Center should not be None"
-    assert best_radius > 0, "Radius should be greater than zero"
+    start_time = time.time()
+
+    # Run the smallest_circle function
+    best_center, best_radius = smallest_circle(
+        population_data, latitudes, longitudes, target_population_ratio=0.5, plot=False, details=True
+    )
+
+    print("--- %s seconds ---" % (time.time() - start_time))
+
+    # Assert results
+    assert isinstance(best_center, tuple), "Center should be a tuple of (latitude, longitude)"
+    assert len(best_center) == 2, "Center should have exactly two coordinates"
+    assert isinstance(best_radius, float), "Radius should be a float"
+    assert best_radius > 0, "Radius should be positive"
+
+
+    # Run the smallest_circle function with plot
+    best_center, best_radius = smallest_circle(
+        population_data, latitudes, longitudes, target_population_ratio=0.5, plot=True, details=False
+    )
+
+
+if __name__ == "__main__":
+    test_load_population_data()
