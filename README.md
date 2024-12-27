@@ -29,7 +29,7 @@ The `SmallestCircle` library is designed to compute the smallest enclosing circl
     ```bash
     python setup.py install
     ```
-    ## Or
+    #### Or
     ```bash
     pip install .
     ```
@@ -62,7 +62,7 @@ Once downloaded, provide the path to the dataset when using the library.
 ### 1. Load Population Data
 
 The `load_population_data` function allows loading and preprocessing of population data.
-# Load population data for Italy (country code: 380)
+#### Load population data for Italy (country code: 380)
 
 ```python
 from smallestcircle import load_population_data
@@ -78,7 +78,7 @@ population_data, latitudes, longitudes  = load_population_data(file_path, year=y
 ### 2. Compute the Smallest Circle
 
 Use the `smallest_circle` function to compute the smallest circle that covers a specified fraction of the population.
-# Compute the smallest circle covering 50% of the population
+#### Compute the smallest circle covering 50% of the population
 
 ```python
 from smallestcircle import smallest_circle
