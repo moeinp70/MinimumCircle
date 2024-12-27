@@ -23,6 +23,21 @@ The library requires Python 3.7 or higher. Install the required dependencies usi
 pip install -r requirements.txt
 ```
 
+
+### Install from Source
+1. Clone the repository:
+    ```bash
+    git clone https://github.com/yourusername/SmallestCircle.git
+    cd SmallestCircleCircle
+    ```
+2. Install the library:
+    ```bash
+    pip install .
+    ```
+
+---
+
+
 ### Install the Library
 
 To install the library, run:
@@ -49,6 +64,7 @@ Once downloaded, provide the path to the dataset when using the library.
 ### 1. Load Population Data
 
 The `load_population_data` function allows loading and preprocessing of population data.
+# Load population data for Italy (country code: 380)
 
 ```python
 from smallestcircle import load_population_data
@@ -64,6 +80,7 @@ population_data, latitudes, longitudes  = load_population_data(file_path, year=y
 ### 2. Compute the Smallest Circle
 
 Use the `smallest_circle` function to compute the smallest circle that covers a specified fraction of the population.
+# Compute the smallest circle covering 50% of the population
 
 ```python
 from smallestcircle import smallest_circle
