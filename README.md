@@ -38,7 +38,7 @@ pip install -r requirements.txt
 ---
 
 
-### Install the Library
+### Install the Library without git
 
 To install the library, run:
 
