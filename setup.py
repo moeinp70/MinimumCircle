@@ -8,15 +8,16 @@ setup(
     description="A Python library to calculate the smallest circle covering a target population fraction.",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    url="https://github.com/moeinp70/MinimumCircle",
-    packages=find_packages(where="src"),  # Finds packages in "src"
-    package_dir={"": "src"},  # Defines "src" as the root for packages
+    url="https://github.com/moeinp70/SmallestCircle",
+    packages=find_packages(where="src"),
+    package_dir={"": "src"},  # src is the root directory
+    py_modules=["smallestcircle"],  # Directly reference the module in src
     include_package_data=True,
     install_requires=[
-        "numpy",
+        "numpy==1.26.4",
         "matplotlib",
-        "xarray==0.20.0",
-        "zipfile",
+        "xarray==0.20.2",
+        
         "scipy",
     ],
     classifiers=[

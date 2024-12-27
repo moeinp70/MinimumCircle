@@ -15,13 +15,7 @@ The `SmallestCircle` library is designed to compute the smallest enclosing circl
 
 ## Installation
 
-### Requirements
 
-The library requires Python 3.7 or higher. Install the required dependencies using:
-
-```bash
-pip install -r requirements.txt
-```
 
 
 ### Install from Source
@@ -31,20 +25,24 @@ pip install -r requirements.txt
     cd SmallestCircle
     ```
 2. Install the library:
+
+    ```bash
+    python setup.py install
+    ```
+    ## Or
     ```bash
     pip install .
     ```
 
----
 
-
-### Install the Library without git
-
-To install the library, run:
+### Requirements
+The library requires Python 3.7 or higher. Install the required dependencies using:
 
 ```bash
-python setup.py install
+pip install -r requirements.txt
 ```
+
+
 
 ---
 
@@ -85,7 +83,7 @@ Use the `smallest_circle` function to compute the smallest circle that covers a 
 ```python
 from smallestcircle import smallest_circle
 
-center, radius = smallest_circle(population_data, latitudes, longitudes, target_population_ratio=0.5, details=False, Plot=False)
+center, radius = smallest_circle(population_data, latitudes, longitudes, target_population_ratio=0.5, details=False, plot=False)
 print(f"Center: {center}, Radius: {radius} km")
 ```
 
@@ -95,7 +93,7 @@ Visualize the population density with the calculated circle.
 
 ```python
 from smallestcircle import smallest_circle
-_, _ = smallest_circle(population_data, latitudes, longitudes, target_population_ratio=0.5, details=True, Plot=True)
+_, _ = smallest_circle(population_data, latitudes, longitudes, target_population_ratio=0.5, details=True, plot=True)
 ```
 
 ---
