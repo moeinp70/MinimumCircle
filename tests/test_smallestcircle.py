@@ -7,7 +7,7 @@ def test_load_population_data():
     """
     Test the load_population_data function with a dataset.
     """
-    file_path = "../dataset/gpw_v4_population_count_rev11_2pt5_min.nc"
+    file_path = "C:/Users/Moein/Desktop/dataset/gpw_v4_population_count_rev11_2pt5_min.nc"
 
     country_code='IRn'
     year=2020
