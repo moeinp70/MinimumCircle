@@ -64,18 +64,17 @@ Use the `smallest_circle` function to compute the smallest circle that covers a 
 ```python
 from smallestcircle import smallest_circle
 
-center, radius = smallest_circle(data, population_array, latitudes, longitudes, target_population_ratio=0.5)
+center, radius = smallest_circle(data, population_array, latitudes, longitudes, target_population_ratio=0.5, details=True, Plot=False)
 print(f"Center: {center}, Radius: {radius} km")
 ```
 
 ### 3. Visualize Results
 
-Visualize the population density with the calculated circle overlay.
+Visualize the population density with the calculated circle.
 
 ```python
-from smallestcircle import plot_circle
-
-plot_circle(population_array, center, radius, latitudes, longitudes)
+from smallestcircle import smallest_circle
+_, _ = smallest_circle(data, population_array, latitudes, longitudes, target_population_ratio=0.5, details=True, Plot=True)
 ```
 
 ---
