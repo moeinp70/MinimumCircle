@@ -2,10 +2,14 @@
 
 The `SmallestCircle` library is designed to compute the smallest enclosing circle that covers a specified fraction of a population based on input geospatial population data.
 
+![Smallest Circle Result](Figure_1.png)
+Optimized Circle center: (21.020833333333343, 105.8125)
+Minimum radius to cover at least 49.50% of population: 3471.85 km
+Population within final circle: 3944877745.18
+Expected population (50% of country): 3984724992.00
 ---
 
 ## Features
-
 - Load and process population data from NetCDF files or zipped archives.
 - Support for filtering data by country or geographical bounds.
 - Calculate the smallest circle covering a given fraction of the total population.
@@ -14,9 +18,6 @@ The `SmallestCircle` library is designed to compute the smallest enclosing circl
 ---
 
 ## Installation
-
-
-
 
 ### Install from Source
 1. Clone the repository:
