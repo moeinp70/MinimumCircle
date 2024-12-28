@@ -5,11 +5,11 @@ from smallestcircle import load_population_data, smallest_circle, plot_circle
 
 def test_load_population_data():
     """
-    Test the load_population_data function with a dataset.
+    Test the load_population_data function with a dataset. using nc or zip file
     """
-    file_path = "C:/Users/Moein/Desktop/dataset/gpw_v4_population_count_rev11_2pt5_min.nc"
+    file_path = "./dataset/gpw-v4-population-count-rev11_totpop_2pt5_min_nc.zip"
 
-    country_code='IRn'
+    country_code=380
     year=2020
     bounds=None#[10,50,-10,50]
 
@@ -23,7 +23,7 @@ def test_load_population_data():
 
     # Run the smallest_circle function
     best_center, best_radius = smallest_circle(
-        population_data, latitudes, longitudes, target_population_ratio=0.5, plot=False, details=True
+        population_data, latitudes, longitudes, target_population_ratio=0.5, plot=True, details=True
     )
 
     print("--- %s seconds ---" % (time.time() - start_time))
@@ -34,12 +34,12 @@ def test_load_population_data():
     assert isinstance(best_radius, float), "Radius should be a float"
     assert best_radius > 0, "Radius should be positive"
 
-
+'''
     # Run the smallest_circle function with plot
     best_center, best_radius = smallest_circle(
         population_data, latitudes, longitudes, target_population_ratio=0.5, plot=True, details=False
     )
-
+'''
 
 if __name__ == "__main__":
     test_load_population_data()

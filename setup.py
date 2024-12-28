@@ -16,7 +16,7 @@ setup(
     install_requires=[
         "numpy==1.26.4",
         "matplotlib",
-        "xarray",
+        "xarray==0.19.0",
         
         "scipy",
     ],

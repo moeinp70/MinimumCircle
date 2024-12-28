@@ -413,7 +413,7 @@ def expand_circle222(distances, populations, target_population, sorted_indices):
 
 
 
-def smallest_circle(population_data, latitudes, longitudes, target_population_ratio=0.50, tolerance=0.01, max_candidates=100, details=True, plot=True):
+def smallest_circle(population_data, latitudes, longitudes, target_population_ratio=0.50, tolerance=0.01, max_candidates=20, details=True, plot=True):
     """
     Find the smallest circle that covers the target population fraction.
 
